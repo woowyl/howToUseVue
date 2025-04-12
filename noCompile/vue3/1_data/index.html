@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue</title>
+</head>
+<body>
+  <div class="content" id="app">
+    <h1>hello world</h1>
+    <h2>
+      hello 
+      <input v-model="name" placeholder="请输入名字">
+    </h2>
+    <button @click="addList">加入列表</button>
+    <p>你hello 了以下列表</p>
+    <!-- <list-view :list="list" @removeList="removeList"></list-view> -->
+    <!-- HTML 的属性名（包括事件名）在原生 HTML 中是不区分大小写的。 removeList 会被浏览器转为removelist  -->
+    <list-view :list="list" @removelist="removeList"></list-view>
+    <!-- <ul>
+      <li v-for="(item, index) in list" :key="index">
+        {{ item }}
+        <button @click="removeList(index)">删除</button>
+      </li>
+    </ul> -->
+  </div>
+</body>
+<script src="../lib/vue.3.5.13.dist.js"></script>
+<script type="module" src="./components/item.vue.js"></script>
+<script type="module" src="./components/list.vue.js"></script>
+<script type="module" src="./main.js"></script>
+</html>
